@@ -1,0 +1,619 @@
+/*------------------------------------*\
+#FONTS
+\*------------------------------------*/
+
+@font-face {
+  font-family: "HK Grotesk Web";
+  font-weight: 200;
+  src: url("../fonts/hkgrotesk-light-webfont.woff2") format("woff2"), url("../fonts/hkgrotesk-light-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "HK Grotesk Web";
+  font-weight: 400;
+  src: url("../fonts/hkgrotesk-regular-webfont.woff2") format("woff2"), url("../fonts/hkgrotesk-regular-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "HK Grotesk Web";
+  font-weight: 600;
+  src: url("../fonts/hkgrotesk-medium-webfont.woff2") format("woff2"), url("../fonts/hkgrotesk-medium-webfont.woff") format("woff");
+}
+
+/*------------------------------------*\
+#Variables
+\*------------------------------------*/
+
+:root {
+  /* colors */
+  /* opacity */
+  /* transitions */
+}
+
+/*------------------------------------*\
+#GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: "WorkSans-Medium", sans-serif;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #FFF;
+  font-feature-settings: "zero" 1;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*
+* Remove text-shadow in selection highlight:
+* https://twitter.com/miketaylr/status/12228805301
+*
+* Customize the background color to match your design.
+*/
+
+::-moz-selection {
+  background: LightGrey;
+  color: white;
+  text-shadow: none;
+}
+
+::selection {
+  background: LightGrey;
+  color: white;
+  text-shadow: none;
+}
+
+/*------------------------------------*\
+#Elements
+\*------------------------------------*/
+
+/*
+Elements: Images
+---
+Default markup for images to make them responsive
+*/
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 36px;
+  line-height: 48px;
+  margin: 0 0 24px;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 40px;
+  margin: 0 0 24px;
+}
+
+h3 {
+  font-size: 26px;
+  line-height: 32px;
+  margin: 0 0 24px;
+}
+
+h4, h5, h6 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  margin: 0 0 24px;
+}
+
+p, ol, ul, dl, table, address, figure {
+  margin: 0 0 24px;
+}
+
+ul, ol {
+  padding-left: 24px;
+}
+
+li ul, li ol {
+  margin-bottom: 0;
+}
+
+blockquote {
+  font-style: normal;
+  font-size: 23px;
+  line-height: 32px;
+  margin: 0 0 24px;
+}
+
+blockquote * {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+figcaption {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 8px;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: LightGrey;
+  margin: 0 0 24px;
+}
+
+a {
+  color: LightGrey;
+  outline-color: LightGrey;
+  outline-width: medium;
+  outline-offset: 2px;
+}
+
+a:visited, a:active {
+  color: Black;
+}
+
+a:hover, a:focus {
+  color: LightGrey;
+}
+
+label, input {
+  display: block;
+}
+
+select {
+  width: 100%;
+}
+
+input::placeholder {
+  color: gray;
+}
+
+/*------------------------------------*\
+#OBJECTS
+\*------------------------------------*/
+
+/*
+    Object: Button reset
+    ---
+    Small button reset object
+*/
+
+.o-button-reset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+}
+
+/*
+    Object: Hide accessible
+    ---
+    Accessibly hide any element
+*/
+
+.o-hide-accessible {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/*------------------------------------*\
+#COMPONENTS
+\*------------------------------------*/
+
+/*
+    Component: Logo
+    ---
+    Website main logo
+*/
+
+.c-logo {
+  font-size: 16px;
+  line-height: 16px;
+  flex: auto;
+  margin-top: 24px;
+  padding-left: 35%;
+  padding-right: 35%;
+  align-items: center;
+}
+
+@media screen and (max-width: 400px) {
+  .c-logo {
+    font-size: 8px;
+    line-height: 8px;
+    flex: auto;
+    margin-top: 8px;
+    padding-left: 1%;
+    padding-right: 1%;
+    align-items: left;
+    max-width: 200px;
+  }
+  .u-muted {
+    max-width: 200px;
+  }
+}
+
+.c-logo-header {
+  min-width: 530px;
+}
+
+.timetoday {
+  margin-bottom: 0px;
+}
+
+/*
+    Component: Header
+    ---
+
+*/
+
+body {
+  margin: 0;
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    position: fixed;
+  }
+}
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #FFF;
+  border-top-style: double;
+  border-bottom-style: double;
+}
+
+ul.topnav li {
+  float: left;
+}
+
+ul.topnav li a {
+  display: block;
+  color: Black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul.topnav li a:hover {
+  background-color: #f2f2f2;
+}
+
+ul.topnav li.right {
+  float: right;
+}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right, ul.topnav li {
+    float: none;
+    text-align: left;
+  }
+  .nav {
+    width: 100%;
+  }
+  .topnav {
+    width: 100%;
+    max-width: 600px;
+  }
+  ul.topnav li a {
+    text-align: left;
+    padding-left: 32px;
+  }
+}
+
+/*
+    Component: App
+    ---
+    Main app wrapper
+*/
+
+.c-app {
+  padding-left: 5%;
+  padding-right: 5%;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vh;
+}
+
+@media screen and (max-width: 600px) {
+  .c-app {
+    padding-left: 0%;
+    padding-right: 0%;
+    align-items: left;
+    width: 100%;
+  }
+}
+
+.c-app__summary {
+  font-size: 28px;
+  line-height: 40px;
+}
+
+.c-app--layout {
+  min-height: 100vh;
+  margin-top: 1%;
+}
+
+.nav {
+  border-top: 5px black;
+  border-bottom: 5px black;
+}
+
+/*
+    Component: Horizon
+    ---
+    Horizon with sun visualisation
+*/
+
+.c-horizon__sky-wrapper {
+  position: relative;
+  height: 2000px;
+  overflow: hidden;
+  padding-top: 22px;
+  padding-right: 40px;
+  /*background-image: url("img\svg\arrow-pointing-left-svgrepo-com.svg");*/
+}
+
+.c-horizon__sky {
+  position: relative;
+  height: 100%;
+}
+
+/*-------------------------------------*\
+#Horizontal scrolling
+\*------------------------------------*/
+
+::-webkit-scrollbar {
+  width: 1px;
+  height: 1px;
+}
+
+::-webkit-scrollbar-button {
+  width: 1px;
+  height: 1px;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.horizontal-scroll-wrapper {
+  /*position: absolute;*/
+  display: block;
+  top: 0;
+  left: 0;
+  width: 430px;
+  max-height: 1390px;
+  margin: 0;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  background: #FFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transform: rotate(-90deg) translateY(-450px);
+  transform-origin: right top;
+}
+
+.article {
+  display: block;
+  padding: 5px;
+  background: #f2f2f2;
+  transform: rotate(90deg);
+  transform-origin: right top;
+  width: 451px;
+  height: 455px;
+  margin: 10px 0;
+}
+
+.squares {
+  padding: 455px 0 0 0;
+}
+
+.article-titel {
+  margin-top: 16px;
+  height: 35%;
+}
+
+.article-tijd {}
+
+.article-inhoud {
+  height: 35%;
+  margin-bottom: 0px;
+}
+
+.article-link {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 8px 1.5em;
+  background: none;
+  color: Black;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.25s ease;
+  /*border: 3px solid #454545;*/
+}
+
+.article-link:hover {
+  color: #f2f2f2;
+}
+
+.article-link::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #454545;
+  transform-origin: left;
+  transition: width 0.45s ease;
+  z-index: -1;
+}
+
+.article-link:hover::after {
+  width: 100%;
+}
+
+.article--pijlen {
+  background-color: white;
+}
+
+.article--arrow-left {
+  width: 80%;
+  height: 80%;
+  margin-top: 35%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  align-self: center;
+}
+
+.article--arrow-right {
+  width: 80%;
+  height: 80%;
+  margin-top: auto;
+  margin-left: 0px;
+  margin-right: auto;
+  margin-bottom: 35%;
+  align-self: center;
+  transform: rotate(-180deg);
+  color: red;
+}
+
+/*------------------------------------*\
+#UTILITIES
+\*------------------------------------*/
+
+/*
+    Utilities: Mute
+    Mute with opacity
+*/
+
+.u-muted {
+  opacity: 60;
+}
+
+/*------------------------------------*\
+#STATES
+\*------------------------------------*/
+
+/*
+    Change the theme using CSS vars.
+*/
+
+--color-front {
+  color: black;
+}
+
+--color-back {
+  background-color: #cce7ff
+}
+
+/* Night version: just switch the light and dark vars */
+
+--color-font {}
+
+/*------------------------------------*\
+#MEDIA
+\*------------------------------------*/
+
+/*
+    Print styles.
+    ---
+    Inlined to avoid the additional HTTP request:
+    http://www.phpied.com/delay-loading-your-print-css/
+*/
+
+@media print {
+  *, *:before, *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster:
+        http://www.sanbeiji.com/archives/953 */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a, a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  /*
+    * Don't show links that are fragment identifiers,
+    * or use the `javascript:` pseudo protocol
+    */
+  a[href^="#"]:after, a[href^="javascript:"]:after {
+    content: "";
+  }
+  pre {
+    white-space: pre-wrap !important;
+  }
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  /*
+    * Printing Tables:
+    * http://css-discuss.incutio.com/wiki/Printing_Tables
+    */
+  thead {
+    display: table-header-group;
+  }
+  tr, img {
+    page-break-inside: avoid;
+  }
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2, h3 {
+    page-break-after: avoid;
+  }
+}
